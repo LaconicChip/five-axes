@@ -1,0 +1,11 @@
+[
+  { "url": "file:///C:/Users/chip/WorkBuddy/2026-10-18-20-35-05/five-axes/index.html", "out": "shots/shot-cover.png", "w": 1440, "h": 1000 },
+  { "url": "file:///C:/Users/chip/WorkBuddy/2026-10-18-20-35-05/five-axes/index.html", "out": "shots/shot-quiz.png", "w": 1440, "h": 900, "eval": "shots/eval-quiz.js" },
+  { "url": "file:///C:/Users/chip/WorkBuddy/2026-10-18-20-35-05/five-axes/index.html?demo=1", "out": "shots/shot-report-top.png", "w": 1440, "h": 1000 },
+  { "url": "file:///C:/Users/chip/WorkBuddy/2026-10-18-20-35-05/five-axes/index.html?demo=1&sec=s02", "out": "shots/shot-report-02.png", "w": 1440, "h": 1060, "eval": "shots/filter-sec.js" },
+  { "url": "file:///C:/Users/chip/WorkBuddy/2026-10-18-20-35-05/five-axes/index.html?demo=1&sec=s03", "out": "shots/shot-report-03.png", "w": 1440, "h": 900, "eval": "shots/filter-sec.js" },
+  { "url": "file:///C:/Users/chip/WorkBuddy/2026-10-18-20-35-05/five-axes/index.html?demo=1&sec=s06", "out": "shots/shot-report-06.png", "w": 1440, "h": 1000, "eval": "shots/filter-sec.js" },
+  { "url": "file:///C:/Users/chip/WorkBuddy/2026-10-18-20-35-05/five-axes/index.html", "out": "shots/shot-m-quiz.png", "w": 390, "h": 844, "mobile": true, "full": true, "eval": "shots/eval-quiz.js" },
+  { "url": "file:///C:/Users/chip/WorkBuddy/2026-10-18-20-35-05/five-axes/index.html?demo=1", "out": "shots/shot-m-report.png", "w": 390, "h": 844, "mobile": true },
+  { "url": "file:///C:/Users/chip/WorkBuddy/2026-10-18-20-35-05/five-axes/index.html", "out": "shots/shot-dark.png", "w": 1440, "h": 900, "dark": true, "eval": "shots/eval-quiz.js" }
+]

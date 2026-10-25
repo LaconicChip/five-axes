@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FIVE AXES · 大五人格深度档案</title>
+<meta name="description" content="40 题，五条连续轴。每答一题都告诉你这题在测什么；结果给出面向级画像、优势与盲点、三种场景的具体表现。">
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="./" data-action="home" aria-label="FIVE AXES 首页">
+      <span class="brand-mark">FIVE<span class="brand-dot">/</span>AXES</span>
+      <span class="brand-sub">大五人格 · 深度档案</span>
+    </a>
+    <div class="topbar-meta">
+      <span>40 题</span>
+      <span class="sep" aria-hidden="true">/</span>
+      <span>约 8 分钟</span>
+      <span class="sep" aria-hidden="true">/</span>
+      <span>仅存本地</span>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- 01 封面 -->
+  <section id="view-cover" class="view">
+    <div class="shell">
+      <div class="cover-meta">
+        <span class="label">人格测量 / BIG FIVE</span>
+        <span class="label">40 ITEMS</span>
+        <span class="label">5 AXES</span>
+        <span class="label">≈ 8 MIN</span>
+      </div>
+
+      <h1 class="cover-title">
+        你不是一个类型。<br>
+        你是一条<span class="mark">区间</span>。
+      </h1>
+
+      <div class="cover-grid">
+        <p class="cover-lead">
+          大五人格不把你装进 16 个盒子。它给你五条连续的轴：每一条都有刻度、有代价，也有可以移动的余地。
+          这一版会在你答完每一题之后，告诉你那题到底在测什么。
+        </p>
+        <div class="cover-actions">
+          <button class="primary" type="button" data-action="start">开始作答</button>
+          <button class="ghost" type="button" data-action="resume" id="resumeBtn" hidden>继续上次</button>
+          <button class="linkbtn" type="button" data-action="demo">先看一份示例档案 →</button>
+          <p class="fineprint">答案保存在这台设备的浏览器里，不上传、不追踪。没有账号，也没有第二个人看得到。</p>
+        </div>
+      </div>
+
+      <div class="axis-table" id="axisTable" aria-label="五条轴的说明"></div>
+
+      <div class="history" id="history" hidden></div>
+
+      <div class="cover-foot">
+        <div class="cover-foot-col">
+          <span class="label">方法 / METHOD</span>
+          <p>每条轴拆成 4 个面向，每个面向 2 题。其中 4 题反向计分，用来抵消一路点「同意」的习惯。</p>
+        </div>
+        <div class="cover-foot-col">
+          <span class="label">边界 / LIMITS</span>
+          <p>这是自我描述的脚手架，不是临床诊断。分数说的是「你在本量表内的位置」，不是人群百分位。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 答题 -->
+  <section id="view-quiz" class="view" hidden>
+    <div class="shell">
+      <div class="quiz-head">
+        <div class="progress" role="progressbar" aria-label="作答进度" aria-valuemin="0" aria-valuemax="40" aria-valuenow="0" id="progressBar">
+          <i id="progressFill"></i>
+        </div>
+        <div class="quiz-head-row">
+          <span class="mono" id="quizCount">01 / 40</span>
+          <div class="quiz-tools">
+            <button class="ghost sm" type="button" data-action="prev" id="prevBtn">上一题</button>
+            <button class="ghost sm" type="button" data-action="auto" id="autoBtn" aria-pressed="true">自动翻页 开</button>
+            <button class="ghost sm" type="button" data-action="finish" id="finishBtn">交卷</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz-grid">
+        <div class="quiz-main">
+          <p class="axis-tag" id="axisTag">O · 开放性</p>
+          <h2 class="statement" id="statement" tabindex="-1"></h2>
+
+          <div class="scale" id="scale" role="radiogroup" aria-labelledby="statement"></div>
+
+          <div class="note" id="note" hidden>
+            <i class="note-timer" id="noteTimer" aria-hidden="true"></i>
+            <p class="note-head"><span class="label">这题在测什么</span><span class="note-facet" id="noteFacet"></span></p>
+            <p class="note-line" id="noteH"><span class="note-dir">高分</span><span></span></p>
+            <p class="note-line" id="noteL"><span class="note-dir">低分</span><span></span></p>
+            <p class="note-dir-flag" id="noteRev" hidden>本题反向计分：选「同意」计入的是相反方向。</p>
+          </div>
+
+          <div class="quiz-foot">
+            <button class="primary" type="button" data-action="next" id="nextBtn">下一题</button>
+            <p class="hint">按 <kbd>1</kbd>–<kbd>5</kbd> 作答 · <kbd>Enter</kbd> 继续 · <kbd>←</kbd> 回看</p>
+          </div>
+          <p class="sr-live" id="live" role="status" aria-live="polite"></p>
+        </div>
+
+        <aside class="quiz-rail">
+          <div class="rail-num" id="railNum">01</div>
+          <div class="rail-of">/ 40</div>
+          <div class="rail-sheet" id="railSheet" aria-label="答题卡：点击跳转"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 档案 -->
+  <section id="view-report" class="view" hidden>
+    <div class="shell">
+      <div class="report">
+        <aside class="report-index" id="reportIndex" aria-label="档案目录"></aside>
+        <div class="report-body" id="reportBody"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer class="site-foot">
+  <div class="shell site-foot-inner">
+    <p class="fineprint">FIVE AXES 1.0 · 基于大五人格模型自建题库 · 答案仅存于 localStorage</p>
+    <p class="fineprint">不构成心理诊断或医疗建议。如果困扰持续存在，请找专业人士。</p>
+  </div>
+</footer>
+
+<noscript>
+  <div class="shell" style="padding:40px 0">
+    <p>这个测验需要 JavaScript 才能在本地计算分数。请开启后刷新。</p>
+  </div>
+</noscript>
+
+<script src="assets/data.js"></script>
+<script src="assets/engine.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
